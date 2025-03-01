@@ -1,0 +1,102 @@
+*{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+footer{
+    background-color: #eee;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); 
+    /**/
+    border-radius: 20px 20px 0 0; /* Arrondi en haut */
+    padding: 40px 30px 10px;
+    position: relative; /* Assure un bon positionnement */
+
+}
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Largeur de la ligne */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #1E3A8A; /* Bleu foncé pour rester cohérent avec ton style */
+    border-radius: 2px;
+
+}
+.footerContainer{
+    width: 100%;
+   /* padding: 70px 30px 20px;*/
+    padding: 40px 30px 10px; /* Ajuste le padding pour réduire la hauteur */
+
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin:10px ;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2rem;
+    color: black;
+    opacity: 0.9;
+}
+/*Hover effect on social media*/
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    background-color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    list-style: none; /* Supprime les puces */
+    padding: 0; /* Enlève tout padding par défaut */
+    margin: 0; /* Enlève tout margin par défaut */
+    display: flex;
+    justify-content: center;
+}
+.footerNav ul li a{
+    color: black;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.s;
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerbottom{
+    background-color: #eee;
+    opacity: 1;
+    padding: 10px;/*20*/
+    text-align: center;
+}
+.designer{
+    opacity:0.7 ;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0 5px;
+}
+
+@media(max-width:600px){
+    .footerNav ul {
+        flex-direction: column;
+    }
+    .footer ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
