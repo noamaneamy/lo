@@ -1,9 +1,6 @@
 import "./NavbarStyles.css"
 import { Link } from "react-scroll";
-import Drive from "../../assets/Drive.png"
-import menuicon from "../../assets/menuicon.png"
 import { useEffect, useState } from "react";
-import { flushSync } from "react-dom";
 const Navbar = () =>{
   const[sticky , setSticky]=useState(false) ;
   useEffect(()=>{
@@ -17,7 +14,7 @@ const Navbar = () =>{
   }
   return (
     <nav className={`container ${sticky ? "dark-nav" : ""}`}>
-      <img src={Drive} alt="" className="logo"/>
+      <img src={"../../assets/Drive.png"} alt="" className="logo"/>
 
       <ul className={mobileMenu?"":"hide-mobile-menu"} >
         <li><Link to="hero" smooth={true} offset={0} duration={500}>Home</Link></li>
@@ -28,7 +25,7 @@ const Navbar = () =>{
         <li><Link className="btn" >Login</Link></li>
       </ul>
 
-      <img src={menuicon} 
+      <img src={"../../assets/menuicon.png"} 
           alt="" 
           className="menuicon"
           onClick={affichermenu}

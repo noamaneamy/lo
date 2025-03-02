@@ -39,6 +39,7 @@ footer::before {
     padding: 10px;
     background-color: white;
     margin:10px ;
+    height: 50px;
     border-radius: 50%;
 }
 .socialIcons a i{
@@ -48,7 +49,8 @@ footer::before {
 }
 /*Hover effect on social media*/
 .socialIcons a:hover{
-    background-color: #111;
+    background-color: #a5a5a5;
+    color: white;
     transition: 0.5s;
 }
 .socialIcons a:hover i{

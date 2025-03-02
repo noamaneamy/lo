@@ -1,91 +1,78 @@
-import "./Vue.css" ;
-import next_icon from "../../assets/next_icon.webp"
-import back_icon from "../../assets/back_icon.webp"
-import user1 from "../../assets/user1.jpg"
-import user2 from "../../assets/user2.jpg"
-import user3 from "../../assets/user3.jpg"
-import grand_m from "../../assets/grand_m.jpg"
-import { useRef } from "react";
+import "./Vue.css";
+import { useRef, useState } from "react";
+
 export default function Vue() {
+    const slider = useRef();
+    const [transX, setTransX] = useState(0);
 
-    const slider =useRef() ;
-    let transX = 0 ; 
-
-    const slideForward = () =>{
-        if(transX > -50){
-            transX -= 25 ;
-            
+    const slideForward = () => {
+        if (transX > -75) {
+            setTransX(prev => prev - 25);
         }
-        slider.current.style.transform = `translateX(${transX}%)` ;
-    }
+    };
 
-    const slideBackward = () =>{
-        if(transX < 0){
-            transX += 25 ;
-            
+    const slideBackward = () => {
+        if (transX < 0) {
+            setTransX(prev => prev + 25);
         }
-        slider.current.style.transform = `translateX(${transX}%)` ;        
-    }
-  return (
-    <div className="testimonials" id="avis">
-      <img src={next_icon} alt="" className="next-btn" onClick={slideForward} />
-      <img src={back_icon} alt="" className="back-btn" onClick={slideBackward} />
-      <div className="slider">
-        <ul ref={slider}>
-            {/* 1 hade */}
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user2} alt="" className="user-img" />
-                        <div>
-                            <h3>Jean  M.</h3>
-                            <span>  fes</span>
+    };
+
+    return (
+        <div className="testimonials" id="reviews">
+            <img src={'../assets/next_icon.webp'} alt="Next" className="next-btn" onClick={slideForward} />
+            <img src={'../assets/back_icon.webp'} alt="Back" className="back-btn" onClick={slideBackward} />
+            <div className="slider">
+                <ul ref={slider} style={{ transform: `translateX(${transX}%)`, transition: "transform 0.5s ease" }}>
+                    <li>
+                        <div className="slide">
+                            <div className="user-info">
+                                <img src={'../assets/user2.jpg'} alt="User" className="user-img" />
+                                <div>
+                                    <h3>Jean M.</h3>
+                                    <span>Fes</span>
+                                </div>
+                            </div>
+                            <p>Fast purchase and excellent service! The car matched the description perfectly.</p>
                         </div>
-                    </div>
-                    <p>Achat rapide et service impeccable ! La voiture correspondait parfaitement à la description.</p>
-                </div>
-            </li>
-                        {/* 2 hade */}
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user1} alt="" className="user-img" />
-                        <div>
-                            <h3>Sophie L.</h3>
-                            <span>  casa</span>
+                    </li>
+                    <li>
+                        <div className="slide">
+                            <div className="user-info">
+                                <img src={'../assets/user1.jpg'} alt="User" className="user-img" />
+                                <div>
+                                    <h3>Sophie L.</h3>
+                                    <span>Casablanca</span>
+                                </div>
+                            </div>
+                            <p>Good experience, but the delivery took longer than expected.</p>
                         </div>
-                    </div>
-                    <p>Bonne expérience, mais délai de livraison un peu long. Sinon, rien à redire !</p>
-                </div>
-            </li>
-                        {/* 3 hade */}
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={grand_m} alt="" className="user-img" />
-                        <div>
-                            <h3>grand  M</h3>
-                            <span>  fes</span>
+                    </li>
+                    <li>
+                        <div className="slide">
+                            <div className="user-info">
+                                <img src={"../assets/grand_m.jpg"} alt="User" className="user-img" />
+                                <div>
+                                    <h3>Grand M.</h3>
+                                    <span>Fes</span>
+                                </div>
+                            </div>
+                            <p>Very satisfied! Great selection of cars and outstanding customer service.</p>
                         </div>
-                    </div>
-                    <p>Très satisfait ! Large choix de véhicules et excellent service client.</p>
-                </div>
-            </li>
-                        {/* 4 hade */}
-                        <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user3} alt="" className="user-img" />
-                        <div>
-                            <h3>Karim   T.</h3>
-                            <span>  fes</span>
+                    </li>
+                    <li>
+                        <div className="slide">
+                            <div className="user-info">
+                                <img src={"../assets/user3.jpg"} alt="User" className="user-img" />
+                                <div>
+                                    <h3>Karim T.</h3>
+                                    <span>Fes</span>
+                                </div>
+                            </div>
+                            <p>The website is great, but I wish there were more detailed car photos.</p>
                         </div>
-                    </div>
-                    <p>Le site est bien fait, mais j’aurais aimé plus de photos détaillées des voitures.</p>
-                </div>
-            </li>
-        </ul>
-      </div>
-    </div>
-  )
+                    </li>
+                </ul>
+            </div>
+        </div>
+    );
 }

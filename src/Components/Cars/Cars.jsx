@@ -43,8 +43,8 @@ export default function  Cars  () {
           <p className="rating">Rating: {car.rating}</p>
         </div>
       ))}
-      <button className='btn dark-btn'>voir plus <img src="" alt="" /></button>
-
+      <br />
+      <button className='btnplus'>See More</button>
     </div>
   );
 };

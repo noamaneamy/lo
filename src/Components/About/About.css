@@ -1,5 +1,5 @@
 .about{
-    margin: 100px auto;
+    margin: 200px auto;
     display: flex;
     align-items: center;
     justify-content:space-between ;
@@ -21,8 +21,9 @@
 {
     width: 60px;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 55%;
+    top: 55%;
+    cursor: pointer;
     transform: translate(-50px , -50px);
 }
 .about h3{

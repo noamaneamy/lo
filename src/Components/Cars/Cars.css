@@ -48,13 +48,14 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 20px;
+  margin-bottom: 40px;
   padding: 10px;
   background-color: #f4f4f9;
 }
 
 /* Style for each individual car card */
 .car-card {
+  cursor: pointer;
   width: 350px;
   border-radius: 10px;
   background-color: white;
@@ -98,7 +99,26 @@
   font-size: 1.1rem;
   color: gold;
 }
-
+.btnplus{
+  width: 150px;
+  height: 50px;
+  background: #1e3a8a;
+  color: white;
+  padding: 7px 7px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.car-name-link{
+  text-decoration: none;
+  color: inherit;
+}
 /* Media Query for Small Screens */
 @media (max-width: 650px) {
   .car-list {
