@@ -1,0 +1,124 @@
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #E5E5E5; /* Gris clair */
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.h1 {
+    color: #1E3A8A; /* Bleu foncé */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-in-out 0.2s forwards;
+}
+
+.h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0057B7; /* Bleu */
+    margin: 8px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.h1:hover::after {
+    width: 90px;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #D3D3D3; /* Gris moyen */
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0057B7; /* Bleu */
+    box-shadow: 0 0 8px rgba(0, 87, 183, 0.5);
+    transform: scale(1.02);
+}
+
+button {
+    background-color: #0057B7; /* Bleu */
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 87, 183, 0.3);
+}
+
+button:hover {
+    background-color: #1E3A8A; /* Bleu foncé */
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 87, 183, 0.5);
+}
+
+.erreur {
+    background-color: #FFD2D2;
+    color: #D8000C;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.erreur__icon {
+    margin-right: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.erreur:hover .erreur__icon {
+    transform: scale(1.2);
+}
